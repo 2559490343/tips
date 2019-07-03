@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="main.css"/>
+  <script src="jquery-3.4.1.js"></script>
+  <script>
+    $(function () {
+      $('.bigimg').mouseenter(function () {
+        $('.mask').show();
+        $('.bp').show();
+      }).mouseleave(function () {
+        $('.mask').hide();
+        $('.bp').hide();
+      }).mousemove(function (e) {
+        var x = e.pageX - parseInt($(this).offset().left) - $('.mask').width() / 2;
+        var y = e.pageY - parseInt($(this).offset().top) - $('.mask').height() / 2;
+        x = x < 0 ? 0 : x;//最小值检测
+        y = y < 0 ? 0 : y;
+
+        var maxLeft = $(this).width() - $('.mask').width();
+        var maxTop = $(this).height() - $('.mask').height();
+        x = x > maxLeft ? maxLeft : x;//最大值检测
+        y = y > maxTop ? maxTop : y;
+        $('.mask').css("left", "" + x + "px");
+        $('.mask').css("top", "" + y + "px");
+        var biliX = $('.mask').width() / $(this).width();
+        var biliy = $('.mask').height() / $(this).height();
+        var X = (-x / biliX);
+        var Y = (-y / biliy);
+        $('.bp>').css("left", "" + X + "px");
+        $('.bp>').css("top", "" + Y + "px");
+      });
+      $('.intr>ul>li').mouseenter(function () {
+        $(this).addClass("current").siblings().removeClass("current");
+        var index = $(this).index();
+        $('.bigdiv>div:eq(' + index + ')').css("display", "block").siblings().css("display", "none");
+      });
+      var index=0;
+      $('.uu5>li').click(function () {
+        $(this).addClass("now").siblings().removeClass("now");
+         index=$(this).index()-1;
+//        count=$(this).index()-1;
+        $('.uu4>li:eq('+index+')').addClass("active").siblings().removeClass("active");
+      });
+      $('.pagedown').click(function () {
+
+        if(index>3){
+          alert("已经是最后一页啦");
+        }else{
+          index++;
+          $('.uu5>li:eq('+index+')').addClass("now").siblings().removeClass("now");
+          $('.uu4>li:eq('+index+')').addClass("active").siblings().removeClass("active");
+        }
+      });
+      $('.pageup').click(function () {
+        if(index<1){
+          alert("已经是第一页啦");
+        }else{
+          index--;
+          $('.uu5>li:eq('+index+')').addClass("now").siblings().removeClass("now");
+          $('.uu4>li:eq('+index+')').addClass("active").siblings().removeClass("active");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="toolbar">
+  <div class="toolbar_mid">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="toolbar_bot">
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
+<div class="top">
+  <div class="inner">
+    <div class="inner_left">
+      品优购欢迎您！请 <a href="#">登陆</a> <a href="#">免费注册</a>
+    </div>
+    <div class="inner_right">
+      <ul>
+        <li><a href="#">我的订单</a></li>
+        <span class="space"></span>
+        <li><a href="#">我的品优购</a></li>
+        <span class="space"></span>
+        <li>品优购会员></li>
+        <span class="space"></span>
+        <li>企业采购></li>
+        <span class="space"></span>
+        <li>关注品优购></li>
+        <span class="space"></span>
+        <li>客户服务></li>
+        <span class="space"></span>
+        <li>网站导航></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="logo inner">
+  <div class="logo_left">
+    <a href="#"></a>
+  </div>
+  <div class="logo_mid">
+    <div id="search">
+      <input type="text" class="search"/><input type="button" value="搜索" class="btn"/>
+    </div>
+    <div class="ad">
+      <ul>
+        <li>品优购首发</li>
+        <li>亿元优惠</li>
+        <li>9.9元团购</li>
+        <li>每满99减30</li>
+        <li>亿元优惠</li>
+        <li>9.9元团购</li>
+        <li>办公用品</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="logo_right">
+    <div class="showcar">
+      <a href="#">
+        <span class="car"></span>
+        <span>我的购物车</span>
+        <i>0</i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="nav inner">
+  <a href="#">全部商品分类</a>
+  <ul>
+    <li>服装城</li>
+    <li>美妆馆</li>
+    <li>传志超市</li>
+    <li>全球购</li>
+    <li>闪购</li>
+    <li>团购</li>
+    <li>拍卖</li>
+    <li>有趣</li>
+  </ul>
+</div>
+
+<div class="crumb inner">
+  <ul class="uu3">
+    <li><a href="#">手机、数码、通讯</a>/</li>
+    <li><a href="#">手机</a>/</li>
+    <li><a href="#">Apple手机</a>/</li>
+    <li>iphone 6S系列</li>
+  </ul>
+</div>
+<div class="main_info inner">
+  <div class="main_info_left">
+    <div class="bigimg">
+      <img src="uploads/s1.png" alt=""/>
+
+      <div class="mask"></div>
+      <div class="bp">
+        <img src="uploads/b1.png" alt=""/>
+      </div>
+    </div>
+    <div class="smallimg">
+      <span class="prev"><</span>
+      <ul>
+        <li><img src="uploads/s1.png" alt=""/></li>
+        <li><img src="uploads/s2.png" alt=""/></li>
+        <li><img src="uploads/s3.png" alt=""/></li>
+        <li><img src="uploads/s1.png" alt=""/></li>
+        <li><img src="uploads/s2.png" alt=""/></li>
+      </ul>
+      <span class="next">></span>
+    </div>
+  </div>
+  <div class="fr main_info_right">
+    <div class="sku-name">
+      <h4>Apple iPhone 6s（A1700）64G玫瑰金色 移动通信电信4G手机</h4>
+    </div>
+    <div class="summary">
+      <div class="summary-wrap">
+        <div class="fl title"><i>价　　格</i></div>
+        <div class="fl price"><i>¥</i><em>5299.00</em> <s>降价通知</s></div>
+        <div class="fr remark"><i>累计评价</i><em>612188</em></div>
+      </div>
+      <div class="summary-wrap">
+        <div class="fl title"><i>促　　销</i></div>
+        <div class="fl price"><span>加价购</span>满999.00另加20.00元，或满1999.00另加30.00元，或满2999.00另加40.00元，<br/>即可在购物车换购热销商品
+          <a href="#">详情》</a></div>
+      </div>
+    </div>
+    <div class="support">
+      <div class="summary-wrap">
+        <div class="fl title"><i>支　　持</i></div>
+        <div class="fl fix-width"><em class="t-gray">以旧换新，闲置手机回收 4G套餐超值抢 礼品购</em></div>
+      </div>
+      <div class="summary-wrap">
+        <div class="fl title"><i>配 送 至</i></div>
+        <div class="fl fix-width"><em class="t-gray">北京海淀区中关<i class="iconfont"></i>有货 支持 99元免运费
+          |货到付款 |211限时达 </em></div>
+        <div class="fl express"><em class="t-gray">由自营发货，并提供售后服务。11:00前完成下单，预计<strong>今天（08月10日）送达</strong></em></div>
+      </div>
+    </div>
+    <div class="clearfix choose">
+      <div id="specification" class="summary-wrap clearfix">
+        <dl>
+          <dt class="fl title"><i>选择颜色</i></dt>
+          <dd>
+            <a href="#" class="selected">金色</a>
+            <a href="#">银色</a>
+            <a href="#">黑色</a>
+            <a href="#">玫瑰金</a>
+          </dd>
+        </dl>
+        <dl>
+          <dt class="fl title"><i>选择版本</i></dt>
+          <dd>
+            <a href="#" class="selected">公开版</a>
+            <a href="#">移动4G</a>
+          </dd>
+        </dl>
+        <dl>
+          <dt class="fl title"><i>内存容量</i></dt>
+          <dd>
+            <a href="#" class="selected">16G</a>
+            <a href="#">64G</a>
+            <a href="#">128G</a>
+          </dd>
+        </dl>
+        <dl>
+          <dt class="fl title"><i>购买方式</i></dt>
+          <dd>
+            <a href="#" class="selected">官方标配</a>
+            <a href="#">移动优惠购</a>
+            <a href="#">电信优惠购</a>
+          </dd>
+        </dl>
+        <dl>
+          <dt class="fl title"><i>套　　装</i></dt>
+          <dd>
+            <a href="#" class="selected">保护套装</a>
+            <a href="#">充电套装</a>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="summary-wrap join">
+        <div class="controls">
+          <input autocomplete="off" type="text" value="1" minnum="1" class="itxt">
+          <a href="#" class="increment plus">+</a>
+          <a href="#" class="increment mins">-</a>
+        </div>
+        <a href="cart-add.html" class="sui-btn  btn-danger addshopcar">加入购物车</a>
+      </div>
+    </div>
+  </div>
+  <div class="intr">
+    <ul>
+      <li class="current">产品介绍</li>
+      <li>规格包装</li>
+      <li>售后保障</li>
+      <li>商品评价</li>
+    </ul>
+    <div class="bigdiv">
+      <div class="one">
+        <img src="uploads/b1.png" alt=""/>
+      </div>
+      <div class="two">
+        <img src="uploads/b2.png" alt=""/>
+      </div>
+      <div class="three">
+        <img src="uploads/b3.png" alt=""/>
+      </div>
+      <div class="four"></div>
+    </div>
+  </div>
+
+  <div class="fanye">
+    <div class="up">
+      <ul class="uu4">
+        <li class="active">
+          <div><img src="uploads/brand01.png" alt=""/></div>
+          <div><img src="uploads/brand02.png" alt=""/></div>
+          <div><img src="uploads/brand03.png" alt=""/></div>
+        </li>
+        <li>
+          <div><img src="uploads/brand04.png" alt=""/></div>
+          <div><img src="uploads/brand05.png" alt=""/></div>
+          <div><img src="uploads/brand06.png" alt=""/></div>
+        </li>
+        <li>
+          <div><img src="uploads/brand07.png" alt=""/></div>
+          <div><img src="uploads/brand08.png" alt=""/></div>
+          <div><img src="uploads/brand09.png" alt=""/></div>
+        </li>
+        <li>
+          <div><img src="uploads/brand10.png" alt=""/></div>
+          <div><img src="uploads/brand11.png" alt=""/></div>
+          <div><img src="uploads/brand12.png" alt=""/></div>
+        </li>
+        <li>
+          <div><img src="uploads/brand13.png" alt=""/></div>
+          <div><img src="uploads/brand_03.png" alt=""/></div>
+          <div><img src="uploads/brand_05.png" alt=""/></div>
+        </li>
+      </ul>
+    </div>
+    <div class="down">
+      <ul class="uu5">
+        <span class="pageup fl">上一页</span>
+        <li class="now">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <span class="pagedown fr">下一页</span>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

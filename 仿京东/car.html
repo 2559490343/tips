@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="main.css"/>
+</head>
+<script src="jquery-3.4.1.js"></script>
+<script src="js/car.js"></script>
+<body>
+<div class="toolbar">
+  <div class="toolbar_mid">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="toolbar_bot">
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
+<div class="top">
+  <div class="inner">
+    <div class="inner_left">
+      品优购欢迎您！请 <a href="#">登陆</a> <a href="#">免费注册</a>
+    </div>
+    <div class="inner_right">
+      <ul>
+        <li><a href="#">我的订单</a></li>
+        <span class="space"></span>
+        <li><a href="#">我的品优购</a></li>
+        <span class="space"></span>
+        <li>品优购会员></li>
+        <span class="space"></span>
+        <li>企业采购></li>
+        <span class="space"></span>
+        <li>关注品优购></li>
+        <span class="space"></span>
+        <li>客户服务></li>
+        <span class="space"></span>
+        <li>网站导航></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="logo inner">
+  <div class="logo_left">
+    <a href="#"></a>
+  </div>
+  <div class="logo_mid">
+    <div id="search">
+      <input type="text" class="search"/><input type="button" value="搜索" class="btn"/>
+    </div>
+    <div class="ad">
+      <ul>
+        <li>品优购首发</li>
+        <li>亿元优惠</li>
+        <li>9.9元团购</li>
+        <li>每满99减30</li>
+        <li>亿元优惠</li>
+        <li>9.9元团购</li>
+        <li>办公用品</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="logo_right">
+    <div class="showcar">
+      <a href="#">
+        <span class="car"></span>
+        <span>我的购物车</span>
+        <i>0</i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="nav inner">
+  <a href="#">全部商品分类</a>
+  <ul>
+    <li>服装城</li>
+    <li>美妆馆</li>
+    <li>传志超市</li>
+    <li>全球购</li>
+    <li>闪购</li>
+    <li>团购</li>
+    <li>拍卖</li>
+    <li>有趣</li>
+  </ul>
+</div>
+<div class="cart inner">
+  <h4>全部商品 <b>6</b></h4>
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+    <thead>
+    <tr>
+      <th width="10%">
+        <input type="checkbox" class="checkall"/>
+      </th>
+      <th width="35%">商品</th>
+      <th width="10%">单价（元）</th>
+      <th width="10%">数量</th>
+      <th width="10%">小计（元）</th>
+      <th width="10%">操作</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+      <td width="10%">
+        <input type="checkbox" class="ck"/>
+      </td>
+      <td width="35%">
+        <div class="phone">
+          <img src="uploads/mobile.png" alt="" height="90px"/>
+        </div>
+        <div class="inform">
+          Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存
+        </div>
+
+      </td>
+      <td width="10%">
+        <span class="price">8848.00</span>
+      </td>
+      <td width="10%">
+        <div class="amount">
+          <a href="javascript:;" class="sub">-</a><input type="text" value="1"/><a href="javascript:;"
+                                                                                   class="plus">+</a>
+        </div>
+      </td>
+      <td width="10%">
+        <span class="total">8848.00</span>
+      </td>
+      <td width="10%">
+        <a href="#" class="del">删除</a>
+      </td>
+    </tr>
+    <tr>
+      <td width="10%">
+        <input type="checkbox" class="ck"/>
+      </td>
+      <td width="35%">
+        <div class="phone">
+          <img src="uploads/mobile.png" alt="" height="90px"/>
+        </div>
+        <div class="inform">
+          Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存
+        </div>
+
+      </td>
+      <td width="10%">
+        <span class="price">8848.00</span>
+      </td>
+      <td width="10%">
+        <div class="amount">
+          <a href="javascript:;" class="sub">-</a><input type="text" value="1"/><a href="javascript:;"
+                                                                                   class="plus">+</a>
+        </div>
+      </td>
+      <td width="10%">
+        <span class="total">8848.00</span>
+      </td>
+      <td width="10%">
+        <a href="#" class="del">删除</a>
+      </td>
+    </tr>
+    <tr>
+      <td width="10%">
+        <input type="checkbox" class="ck"/>
+      </td>
+      <td width="35%">
+        <div class="phone">
+          <img src="uploads/mobile.png" alt="" height="90px"/>
+        </div>
+        <div class="inform">
+          Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存
+        </div>
+
+      </td>
+      <td width="10%">
+        <span class="price">8848.00</span>
+      </td>
+      <td width="10%">
+        <div class="amount">
+          <a href="javascript:;" class="sub">-</a><input type="text" value="1"/><a href="javascript:;"
+                                                                                   class="plus">+</a>
+        </div>
+      </td>
+      <td width="10%">
+        <span class="total">8848.00</span>
+      </td>
+      <td width="10%">
+        <a href="#" class="del">删除</a>
+      </td>
+    </tr>
+    <tr>
+      <td width="10%">
+        <input type="checkbox" class="ck"/>
+      </td>
+      <td width="35%">
+        <div class="phone">
+          <img src="uploads/mobile.png" alt="" height="90px"/>
+        </div>
+        <div class="inform">
+          Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存
+        </div>
+
+      </td>
+      <td width="10%">
+        <span class="price">8848.00</span>
+      </td>
+      <td width="10%">
+        <div class="amount">
+          <a href="javascript:;" class="sub">-</a><input type="text" value="1"/><a href="javascript:;"
+                                                                                   class="plus">+</a>
+        </div>
+      </td>
+      <td width="10%">
+        <span class="total">8848.00</span>
+      </td>
+      <td width="10%">
+        <a href="#" class="del">删除</a>
+      </td>
+    </tr>
+    <tr>
+      <td width="10%">
+        <input type="checkbox" class="ck"/>
+      </td>
+      <td width="35%">
+        <div class="phone">
+          <img src="uploads/mobile.png" alt="" height="90px"/>
+        </div>
+        <div class="inform">
+          Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存
+        </div>
+
+      </td>
+      <td width="10%">
+        <span class="price">8848.00</span>
+      </td>
+      <td width="10%">
+        <div class="amount">
+          <a href="javascript:;" class="sub">-</a><input type="text" value="1"/><a href="javascript:;"
+                                                                                   class="plus">+</a>
+        </div>
+      </td>
+      <td width="10%">
+        <span class="total">8848.00</span>
+      </td>
+      <td width="10%">
+        <a href="#" class="del">删除</a>
+      </td>
+    </tr>
+    <tr>
+      <td width="10%">
+        <input type="checkbox" class="ck"/>
+      </td>
+      <td width="35%">
+        <div class="phone">
+          <img src="uploads/mobile.png" alt="" height="90px"/>
+        </div>
+        <div class="inform">
+          Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存
+        </div>
+
+      </td>
+      <td width="10%">
+        <span class="price">8848.00</span>
+      </td>
+      <td width="10%">
+        <div class="amount">
+          <a href="javascript:;" class="sub">-</a><input type="text" value="1"/><a href="javascript:;"
+                                                                                   class="plus">+</a>
+        </div>
+      </td>
+      <td width="10%">
+        <span class="total">8848.00</span>
+      </td>
+      <td width="10%">
+        <a href="#" class="del">删除</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="cart_tool inner">
+    <div class="cart_tool_left">
+      <a href="#" class="delall">删除选中的商品</a>
+    </div>
+    <div class="cart_tool_right">
+      <p>已选择 <b>0</b> 件商品 总价（不含运费）：</p><span>¥0.00</span>
+      <a href="#">结算</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
